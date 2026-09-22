@@ -1,0 +1,330 @@
+/* =========================================
+   Contact - LiVi Repostería
+   ========================================= */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding: var(--space-md) 0;
+}
+
+/* ----- Header ----- */
+.contact__header {
+  text-align: center;
+  padding: var(--space-md) 0;
+}
+
+.contact__title {
+  font-size: var(--text-2xl);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.contact__subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ----- Layout principal ----- */
+.contact__layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+/* =========================================
+   Formulario
+   ========================================= */
+
+.contact__form-section {
+  width: 100%;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.contact__label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.contact__input,
+.contact__select,
+.contact__textarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact__input::placeholder,
+.contact__textarea::placeholder {
+  color: var(--color-text-light);
+  opacity: 0.7;
+}
+
+.contact__input:focus,
+.contact__select:focus,
+.contact__textarea:focus {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+}
+
+.contact__textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: var(--font-sans);
+}
+
+.contact__select {
+  cursor: pointer;
+}
+
+/* Botón de enviar */
+.contact__submit {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: all 0.3s ease;
+  margin-top: var(--space-xs);
+}
+
+.contact__submit:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.contact__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ----- Estado de éxito ----- */
+.contact__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact__success-icon {
+  color: var(--color-primary);
+}
+
+.contact__success-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.contact__success-text {
+  color: var(--color-text-light);
+  max-width: 400px;
+  margin: 0;
+}
+
+.contact__success-btn {
+  margin-top: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: all 0.3s ease;
+}
+
+.contact__success-btn:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* =========================================
+   Panel de info
+   ========================================= */
+
+.contact__info-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact__info-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.contact__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact__info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.contact__info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  background-color: rgba(232, 160, 168, 0.12);
+  border-radius: 50%;
+}
+
+.contact__info-label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 2px;
+}
+
+.contact__info-value {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  transition: color 0.3s ease;
+  word-break: break-word;
+}
+
+a.contact__info-value:hover {
+  color: var(--color-primary);
+}
+
+.contact__info-value--small {
+  font-size: var(--text-xs);
+  line-height: 1.6;
+}
+
+/* WhatsApp */
+.contact__whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #25D366;
+  border-radius: var(--radius-full);
+  transition: all 0.3s ease;
+}
+
+.contact__whatsapp:hover {
+  background-color: #1DA851;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Redes sociales */
+.contact__socials {
+  display: flex;
+  gap: var(--space-xs);
+  justify-content: center;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.contact__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--color-secondary);
+  background-color: var(--color-bg);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.contact__social:hover {
+  color: #ffffff;
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 992px) {
+  .contact__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact__form {
+    padding: var(--space-md);
+  }
+
+  .contact__form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__info-card {
+    padding: var(--space-md);
+  }
+}

@@ -1,0 +1,150 @@
+/* =========================================
+   NotFound - LiVi Repostería
+   ========================================= */
+
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+}
+
+.not-found__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  max-width: 560px;
+}
+
+/* ----- Número 404 ----- */
+.not-found__code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: var(--font-serif);
+  font-size: clamp(5rem, 12vw, 9rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary);
+  letter-spacing: -4px;
+}
+
+.not-found__digit--middle {
+  display: inline-block;
+  color: var(--color-secondary);
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ----- Ícono pastel ----- */
+.not-found__icon {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  margin-top: calc(var(--space-sm) * -1);
+  animation: bounce 2.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ----- Texto ----- */
+.not-found__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.not-found__text {
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ----- Botones ----- */
+.not-found__actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-md);
+}
+
+.not-found__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.not-found__btn--primary {
+  color: #ffffff;
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.not-found__btn--primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.not-found__btn--secondary {
+  color: var(--color-secondary);
+  background-color: transparent;
+  border: 2px solid var(--color-secondary);
+}
+
+.not-found__btn--secondary:hover {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 480px) {
+  .not-found__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .not-found__btn {
+    width: 100%;
+  }
+
+  .not-found__code {
+    letter-spacing: -2px;
+  }
+}

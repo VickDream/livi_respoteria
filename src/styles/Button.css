@@ -1,0 +1,88 @@
+/* =========================================
+   Button - LiVi Repostería
+   ========================================= */
+/* src/styles/Button.css - añadir al .btn */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ----- Tamaños ----- */
+.btn--sm {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--text-xs);
+}
+
+.btn--md {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--text-sm);
+}
+
+.btn--lg {
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--text-base);
+}
+
+/* ----- Variantes ----- */
+
+/* Primario: Rosa pastel lleno */
+.btn--primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Secundario: Chocolate lleno */
+.btn--secondary {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background-color: #3E2723;
+  /* Chocolate más oscuro */
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Outline: Borde chocolate, fondo transparente */
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn--outline:hover:not(:disabled) {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* ----- Full Width ----- */
+.btn--full {
+  width: 100%;
+}

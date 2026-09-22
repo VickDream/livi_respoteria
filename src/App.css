@@ -1,0 +1,234 @@
+/* =========================================
+   src/App.css
+   Estilos Globales - LiVi Repostería
+   ========================================= */
+
+/* -----------------------------------------
+   1. VARIABLES (Custom Properties)
+   ----------------------------------------- */
+:root {
+  /* --- Paleta de Colores (Aire Fresco) --- */
+  --color-primary: #E8A0A8;
+  /* Rosa Pastel - Color principal de marca */
+  --color-primary-dark: #C97B85;
+  /* Rosa más oscuro - Hover / Énfasis */
+  --color-secondary: #5D4037;
+  /* Chocolate - Textos fuertes y elegancia */
+  --color-accent: #D4AF37;
+  /* Dorado - Detalles premium */
+  --color-bg: #FDFBF7;
+  /* Blanco Roto - Fondo principal */
+  --color-surface: #FFFFFF;
+  /* Blanco puro - Tarjetas y contenedores */
+  --color-text: #4A4A4A;
+  /* Gris oscuro - Texto general */
+  --color-text-light: #8A8A8A;
+  /* Gris claro - Textos secundarios */
+  --color-border: #F0EAE6;
+  /* Borde sutil - Separadores */
+
+  /* --- Tipografía --- */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  /* Títulos elegantes */
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Cuerpo moderno */
+
+  /* --- Tamaños de Fuente (Responsive con clamp) --- */
+  /* clamp(min, preferido, max) permite que el texto escale solo según la pantalla */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.6vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.3rem + 1vw, 2.25rem);
+  --text-2xl: clamp(2rem, 1.7rem + 1.5vw, 3.5rem);
+
+  /* --- Espaciado (Responsive) --- */
+  --space-xs: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+  --space-md: clamp(1rem, 0.8rem + 1vw, 2rem);
+  --space-lg: clamp(1.5rem, 1.2rem + 1.5vw, 3rem);
+  --space-xl: clamp(2.5rem, 2rem + 2.5vw, 5rem);
+
+  /* --- Bordes y Sombras --- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  /* Para botones tipo píldora */
+
+  --shadow-sm: 0 2px 8px rgba(93, 64, 55, 0.05);
+  --shadow-md: 0 6px 18px rgba(93, 64, 55, 0.08);
+  --shadow-lg: 0 12px 32px rgba(93, 64, 55, 0.12);
+
+  /* --- Layout --- */
+  --container-max: 1200px;
+  --navbar-height: 70px;
+}
+
+/* -----------------------------------------
+   2. RESET Y BASE
+   ----------------------------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Evita que el scroll se desplace al cambiar de página */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -----------------------------------------
+   3. TIPOGRAFÍA BASE
+   ----------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+h1 {
+  font-size: var(--text-2xl);
+}
+
+h2 {
+  font-size: var(--text-xl);
+}
+
+h3 {
+  font-size: var(--text-lg);
+}
+
+p {
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* -----------------------------------------
+   4. ELEMENTOS DE FORMULARIO
+   ----------------------------------------- */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all 0.3s ease;
+}
+
+/* -----------------------------------------
+   5. LAYOUT PRINCIPAL DE LA APP
+   ----------------------------------------- */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-sm);
+}
+
+/* -----------------------------------------
+   6. UTILIDADES RESPONSIVE
+   ----------------------------------------- */
+
+/* Contenedor centrado reutilizable */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+/* Grid responsivo automático (se adapta sin media queries) */
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-md);
+}
+
+/* Ocultar en móvil / Mostrar en desktop */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* -----------------------------------------
+   7. ACCESIBILIDAD
+   ----------------------------------------- */
+/* Respeta la preferencia del usuario de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Foco visible para navegación con teclado */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
