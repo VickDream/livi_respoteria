@@ -115,7 +115,6 @@
   position: absolute;
   width: 90%;
   height: 90%;
-  background-color: var(--color-primary);
   border-radius: 50%;
   opacity: 0.15;
   z-index: 0;

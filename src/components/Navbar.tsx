@@ -9,6 +9,11 @@ export const Navbar = () => {
 
         {/* Logo */}
         <NavLink to="/" className="navbar__logo">
+          <img
+            src="/livi.svg"
+            alt="LiVi Repostería"
+            className="navbar__logo-img"
+          />
           LiVi Repostería
         </NavLink>
 

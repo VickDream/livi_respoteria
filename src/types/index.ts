@@ -90,3 +90,22 @@ export interface ContactInfo {
       facebook: string;
    };
 }
+
+/* =========================================
+   Cursos
+   ========================================= */
+export interface Course {
+   id: number;
+   title: string;
+   description: string;
+   duration: string;      // Ej: "4 semanas"
+   level: CourseLevel;
+   modality: CourseModality;
+   price: number;
+   image: string;
+   featured?: boolean;
+}
+
+export type CourseLevel = 'Principiante' | 'Intermedio' | 'Avanzado';
+
+export type CourseModality = 'Presencial' | 'En línea' | 'Híbrido';

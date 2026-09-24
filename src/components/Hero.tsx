@@ -29,7 +29,7 @@ export const Hero = () => {
         <div className="hero__image-wrapper">
           <div className="hero__image-decoration" aria-hidden="true"></div>
           <img
-            src="https://via.placeholder.com/600x600/E8A0A8/FFFFFF?text=LiVi"
+            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800"
             alt="Pastel artesanal de LiVi Repostería"
             className="hero__image"
           />
